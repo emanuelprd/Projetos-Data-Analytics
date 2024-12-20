@@ -1,4 +1,4 @@
--- Análise Setorial das Empresas da Fortune 1000
+-- Análise Exploratória das Empresas da Fortune 1000
 
 -- Dataset: https://www.kaggle.com/datasets/jeannicolasduval/2024-fortune-1000-companies/data
 
@@ -29,7 +29,7 @@ ORDER BY Total_Employees DESC;
 
 -- Consulta 5: Qual é a receita e margem de lucro médio dos setores? 
 SELECT 
-	Sector, 
+    Sector, 
     ROUND(AVG(Revenues_M)) AS Average_Revenue, 
     ROUND((AVG(Profits_M) / AVG(Revenues_M)), 2) AS Average_Margin
 FROM fortune_analysis.fortune1000_2024
@@ -58,7 +58,7 @@ ORDER BY Percentual_Female DESC;
 
 -- Consulta 9: Quais estados tem o maior número de empresas?
 SELECT 
-	HeadquartersState, 
+    HeadquartersState, 
     COUNT(Company) AS Num_Company
 FROM fortune_analysis.fortune1000_2024
 GROUP BY HeadquartersState
@@ -66,7 +66,7 @@ ORDER BY Num_Company DESC;
 
 -- Consulta 10: Quais as maiores empresas da Californa em valor de mercado (bilhões)?
 SELECT 
-	Company,
+    Company,
     ROUND(MarketCap_Updated_M / 1000,0) AS MarketCap_Billions
 FROM fortune_analysis.fortune1000_2024
 WHERE HeadquartersState = 'California'
@@ -83,7 +83,7 @@ ORDER BY Total_Revenue DESC;
 
 -- Consulta 12: Quais são as industrias das empresas da California do setor de tecnologia? 
 SELECT 
-	Company,
+    Company,
     Industry
 FROM fortune_analysis.fortune1000_2024
 WHERE HeadquartersState = 'California' AND Sector LIKE 'Technology'
@@ -91,7 +91,7 @@ ORDER BY Industry ASC;
 
 -- Consulta 13: Há empresas do setor de simicondutores fora da California? 
 SELECT 
-	Company,
+    Company,
     HeadquartersState
 FROM fortune_analysis.fortune1000_2024
 WHERE HeadquartersState != 'California' AND Industry LIKE 'Semiconductors and Other Electronic Components'
