@@ -1,0 +1,98 @@
+-- Análise Setorial das Empresas da Fortune 1000
+
+-- Dataset: https://www.kaggle.com/datasets/jeannicolasduval/2024-fortune-1000-companies/data
+
+-- Todas as colunas da tabela
+SELECT *
+FROM fortune_analysis.fortune1000_2024
+LIMIT 10;
+
+-- Consulta 1: Quais setores fazem parte do Fortune 1000?
+SELECT DISTINCT Sector
+FROM fortune_analysis.fortune1000_2024;
+
+-- Consulta 2: Quais industrias fazem parte do Fortune 1000?
+SELECT DISTINCT Industry
+FROM fortune_analysis.fortune1000_2024;
+
+-- Consulta 3: Quais setores tem o maior número de empresas?
+SELECT Sector, COUNT(Sector) AS Total_Sector
+FROM fortune_analysis.fortune1000_2024
+GROUP BY Sector
+ORDER BY Total_Sector DESC;
+
+-- Consulta 4: Quais setores empregam mais pessoas?
+SELECT Sector, SUM(Number_of_employees) AS Total_Employees
+FROM fortune_analysis.fortune1000_2024
+GROUP BY Sector
+ORDER BY Total_Employees DESC;
+
+-- Consulta 5: Qual é a receita e margem de lucro médio dos setores? 
+SELECT 
+	Sector, 
+    ROUND(AVG(Revenues_M)) AS Average_Revenue, 
+    ROUND((AVG(Profits_M) / AVG(Revenues_M)), 2) AS Average_Margin
+FROM fortune_analysis.fortune1000_2024
+GROUP BY Sector
+ORDER BY Average_Margin DESC;
+
+-- Consulta 6: Quais empresas tem valor de mercado acima de US$ 1 trilhão
+SELECT Company, ROUND(MarketCap_Updated_M/1000) AS MarketCap_Billions
+FROM fortune_analysis.fortune1000_2024
+WHERE MarketCap_Updated_M/1000 > 1000
+ORDER BY MarketCap_Billions DESC;
+
+-- Consulta 7: Qual é a proporção de homens e mulheres CEOs?
+SELECT 
+    (SUM(CASE WHEN FemaleCEO = 'yes' THEN 1 ELSE 0 END)/COUNT(FemaleCEO))*100 AS Female_COE,
+    (SUM(CASE WHEN FemaleCEO = 'no' THEN 1 ELSE 0 END)/COUNT(FemaleCEO))*100 AS Male_COE
+FROM fortune_analysis.fortune1000_2024;
+
+-- Consulta 8: Quais setores tem o maior número de CEOs mulheres?
+SELECT 
+    Sector, 
+    ROUND(SUM(CASE WHEN FemaleCEO = 'yes' THEN 1 ELSE 0 END) / COUNT(FemaleCEO), 2) AS Percentual_Female
+FROM fortune_analysis.fortune1000_2024
+GROUP BY Sector
+ORDER BY Percentual_Female DESC;
+
+-- Consulta 9: Quais estados tem o maior número de empresas?
+SELECT 
+	HeadquartersState, 
+    COUNT(Company) AS Num_Company
+FROM fortune_analysis.fortune1000_2024
+GROUP BY HeadquartersState
+ORDER BY Num_Company DESC;
+
+-- Consulta 10: Quais as maiores empresas da Californa em valor de mercado (bilhões)?
+SELECT 
+	Company,
+    ROUND(MarketCap_Updated_M / 1000,0) AS MarketCap_Billions
+FROM fortune_analysis.fortune1000_2024
+WHERE HeadquartersState = 'California'
+ORDER BY MarketCap_Updated_M DESC;
+
+-- Consulta 11: Quais os principais setores da California em receita (bilhões)? 
+SELECT 
+    Sector, 
+    ROUND((SUM(Revenues_M)/1000),0) AS Total_Revenue
+FROM fortune_analysis.fortune1000_2024
+WHERE HeadquartersState = 'California'
+GROUP BY Sector
+ORDER BY Total_Revenue DESC;
+
+-- Consulta 12: Quais são as industrias das empresas da California do setor de tecnologia? 
+SELECT 
+	Company,
+    Industry
+FROM fortune_analysis.fortune1000_2024
+WHERE HeadquartersState = 'California' AND Sector LIKE 'Technology'
+ORDER BY Industry ASC;
+
+-- Consulta 13: Há empresas do setor de simicondutores fora da California? 
+SELECT 
+	Company,
+    HeadquartersState
+FROM fortune_analysis.fortune1000_2024
+WHERE HeadquartersState != 'California' AND Industry LIKE 'Semiconductors and Other Electronic Components'
+ORDER BY Company ASC;
