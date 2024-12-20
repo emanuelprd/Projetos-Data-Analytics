@@ -1,4 +1,4 @@
--- Análise Exploratória das Empresas da Fortune 1000
+-- Análise Setorial das Empresas da Fortune 1000
 
 -- Dataset: https://www.kaggle.com/datasets/jeannicolasduval/2024-fortune-1000-companies/data
 
@@ -29,7 +29,7 @@ ORDER BY Total_Employees DESC;
 
 -- Consulta 5: Qual é a receita e margem de lucro médio dos setores? 
 SELECT 
-    Sector, 
+	Sector, 
     ROUND(AVG(Revenues_M)) AS Average_Revenue, 
     ROUND((AVG(Profits_M) / AVG(Revenues_M)), 2) AS Average_Margin
 FROM fortune_analysis.fortune1000_2024
@@ -56,23 +56,32 @@ FROM fortune_analysis.fortune1000_2024
 GROUP BY Sector
 ORDER BY Percentual_Female DESC;
 
--- Consulta 9: Quais estados tem o maior número de empresas?
+-- Consulta 9: Quais estados reúne empresas com o maior valor de mercado médio (bilhões)?
 SELECT 
-    HeadquartersState, 
-    COUNT(Company) AS Num_Company
+	HeadquartersState, 
+    COUNT(Company) AS Num_Company,
+    ROUND((SUM(MarketCap_Updated_M) / COUNT(Company))/1000) AS Avg_MarketCap
 FROM fortune_analysis.fortune1000_2024
 GROUP BY HeadquartersState
-ORDER BY Num_Company DESC;
+ORDER BY Avg_MarketCap DESC;
 
--- Consulta 10: Quais as maiores empresas da Californa em valor de mercado (bilhões)?
+-- Consulta 10: Quais as maiores empresas de Washington em valor de mercado (bilhões)?
 SELECT 
-    Company,
-    ROUND(MarketCap_Updated_M / 1000,0) AS MarketCap_Billions
+	Company,
+    ROUND(MarketCap_Updated_M / 1000,0) AS MarketCap
 FROM fortune_analysis.fortune1000_2024
-WHERE HeadquartersState = 'California'
+WHERE HeadquartersState = 'Washington'
 ORDER BY MarketCap_Updated_M DESC;
 
--- Consulta 11: Quais os principais setores da California em receita (bilhões)? 
+-- Consulta 11: Quais as maiores empresas da Californa em valor de mercado (bilhões)?
+SELECT 
+	Company,
+    ROUND(MarketCap_Updated_M / 1000,0) AS MarketCap
+FROM fortune_analysis.fortune1000_2024
+WHERE HeadquartersState = 'California'
+ORDER BY MarketCap DESC;
+
+-- Consulta 12: Quais os principais setores da California em receita (bilhões)? 
 SELECT 
     Sector, 
     ROUND((SUM(Revenues_M)/1000),0) AS Total_Revenue
@@ -81,17 +90,17 @@ WHERE HeadquartersState = 'California'
 GROUP BY Sector
 ORDER BY Total_Revenue DESC;
 
--- Consulta 12: Quais são as industrias das empresas da California do setor de tecnologia? 
+-- Consulta 13: Quais são as industrias das empresas da California do setor de tecnologia? 
 SELECT 
-    Company,
+	Company,
     Industry
 FROM fortune_analysis.fortune1000_2024
 WHERE HeadquartersState = 'California' AND Sector LIKE 'Technology'
 ORDER BY Industry ASC;
 
--- Consulta 13: Há empresas do setor de simicondutores fora da California? 
+-- Consulta 14: Há empresas do setor de simicondutores fora da California? 
 SELECT 
-    Company,
+	Company,
     HeadquartersState
 FROM fortune_analysis.fortune1000_2024
 WHERE HeadquartersState != 'California' AND Industry LIKE 'Semiconductors and Other Electronic Components'
