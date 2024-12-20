@@ -20,4 +20,4 @@ Neste projeto busquei fazer uma análise exploratória da base de dados da Fortu
 - Consulta 14: Há empresas do setor de simicondutores fora da California?
 
 ## Conclusões
-
+O setor com o maior valor de mercado médio é o de tecnologia que por sinal é o que tem as maiores margens de lucro.
