@@ -8,19 +8,3 @@
 **Tecnologias**: 
 - SQL: Para manipulação e consulta da base de dados.
 - MySQL: Como Sistema de Gerenciamento de Banco de Dados (SGBD).
-
-- ├── LICENSE
-├── README.md          <- README .
-├── query              <- Code of the DB creation and queries.
-│   │
-│   └── retail_sales_tables_db.sql       <- DB creation.
-│   └── analysis.sql                     <- Final queries.
-│   └── query_data                       <- Final queries data.
-├── reports            <- Folder containing the final reports/results of this project.
-│   │
-│   └── query_report.docx        <- Final analysis report Document.
-│   └── query_report.pdf         <- Final query report in PDF for verifying data.
-│   
-├── src                <- Source for this project.
-    │
-    ├── data           <- Datasets used and collected for this project.
