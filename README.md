@@ -1,5 +1,5 @@
 ----------------------------------------------------
-## Análise Exploratória das empresas da Fortune 1000
+Análise Exploratória das empresas da Fortune 1000
 ----------------------------------------------------
 
 ### Sumário
