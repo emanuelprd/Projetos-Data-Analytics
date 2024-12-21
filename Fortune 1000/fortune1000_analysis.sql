@@ -27,28 +27,39 @@ FROM fortune_analysis.fortune1000_2024
 GROUP BY Sector
 ORDER BY Total_Employees DESC;
 
--- Consulta 5: Qual é a receita e margem de lucro médio dos setores? 
+-- Consulta 5: Quais setores tem o maior receita média (bilhões)?
+SELECT Sector, ROUND(AVG(Revenues_M)/1000) AS Average_Revenue
+FROM fortune_analysis.fortune1000_2024
+GROUP BY Sector
+ORDER BY Average_Revenue DESC;
+
+-- Consulta 6: Quais setores tem o maior valor de mercado médio (bilhões)?
+SELECT Sector, ROUND(AVG(MarketCap_Updated_M)/1000) AS Average_MarketCap
+FROM fortune_analysis.fortune1000_2024
+GROUP BY Sector
+ORDER BY Average_MarketCap DESC;
+
+-- Consulta 7: Qual setor tem a maior margem de lucro? 
 SELECT 
 	Sector, 
-    ROUND(AVG(Revenues_M)) AS Average_Revenue, 
     ROUND((AVG(Profits_M) / AVG(Revenues_M)), 2) AS Average_Margin
 FROM fortune_analysis.fortune1000_2024
 GROUP BY Sector
 ORDER BY Average_Margin DESC;
 
--- Consulta 6: Quais empresas tem valor de mercado acima de US$ 1 trilhão
+-- Consulta 8: Quais empresas tem valor de mercado acima de US$ 1 trilhão
 SELECT Company, ROUND(MarketCap_Updated_M/1000) AS MarketCap_Billions
 FROM fortune_analysis.fortune1000_2024
 WHERE MarketCap_Updated_M/1000 > 1000
 ORDER BY MarketCap_Billions DESC;
 
--- Consulta 7: Qual é a proporção de homens e mulheres CEOs?
+-- Consulta 9: Qual é a proporção de homens e mulheres CEOs?
 SELECT 
     (SUM(CASE WHEN FemaleCEO = 'yes' THEN 1 ELSE 0 END)/COUNT(FemaleCEO))*100 AS Female_COE,
     (SUM(CASE WHEN FemaleCEO = 'no' THEN 1 ELSE 0 END)/COUNT(FemaleCEO))*100 AS Male_COE
 FROM fortune_analysis.fortune1000_2024;
 
--- Consulta 8: Quais setores tem o maior número de CEOs mulheres?
+-- Consulta 10: Quais setores tem o maior número de CEOs mulheres?
 SELECT 
     Sector, 
     ROUND(SUM(CASE WHEN FemaleCEO = 'yes' THEN 1 ELSE 0 END) / COUNT(FemaleCEO), 2) AS Percentual_Female
@@ -56,7 +67,7 @@ FROM fortune_analysis.fortune1000_2024
 GROUP BY Sector
 ORDER BY Percentual_Female DESC;
 
--- Consulta 9: Quais estados reúne empresas com o maior valor de mercado médio (bilhões)?
+-- Consulta 11: Quais estados reúne empresas com o maior valor de mercado médio (bilhões)?
 SELECT 
 	HeadquartersState, 
     COUNT(Company) AS Num_Company,
@@ -65,7 +76,7 @@ FROM fortune_analysis.fortune1000_2024
 GROUP BY HeadquartersState
 ORDER BY Avg_MarketCap DESC;
 
--- Consulta 10: Quais as maiores empresas de Washington em valor de mercado (bilhões)?
+-- Consulta 12: Quais as maiores empresas de Washington em valor de mercado (bilhões)?
 SELECT 
 	Company,
     ROUND(MarketCap_Updated_M / 1000,0) AS MarketCap
@@ -73,7 +84,7 @@ FROM fortune_analysis.fortune1000_2024
 WHERE HeadquartersState = 'Washington'
 ORDER BY MarketCap_Updated_M DESC;
 
--- Consulta 11: Quais as maiores empresas da Californa em valor de mercado (bilhões)?
+-- Consulta 13: Quais as maiores empresas da Californa em valor de mercado (bilhões)?
 SELECT 
 	Company,
     ROUND(MarketCap_Updated_M / 1000,0) AS MarketCap
@@ -81,7 +92,7 @@ FROM fortune_analysis.fortune1000_2024
 WHERE HeadquartersState = 'California'
 ORDER BY MarketCap DESC;
 
--- Consulta 12: Quais os principais setores da California em receita (bilhões)? 
+-- Consulta 14: Quais os principais setores da California em receita (bilhões)? 
 SELECT 
     Sector, 
     ROUND((SUM(Revenues_M)/1000),0) AS Total_Revenue
@@ -90,7 +101,7 @@ WHERE HeadquartersState = 'California'
 GROUP BY Sector
 ORDER BY Total_Revenue DESC;
 
--- Consulta 13: Quais são as industrias das empresas da California do setor de tecnologia? 
+-- Consulta 15: Quais são as industrias das empresas da California do setor de tecnologia? 
 SELECT 
 	Company,
     Industry
@@ -98,7 +109,7 @@ FROM fortune_analysis.fortune1000_2024
 WHERE HeadquartersState = 'California' AND Sector LIKE 'Technology'
 ORDER BY Industry ASC;
 
--- Consulta 14: Há empresas do setor de simicondutores fora da California? 
+-- Consulta 16: Há empresas do setor de simicondutores fora da California? 
 SELECT 
 	Company,
     HeadquartersState
