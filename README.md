@@ -1,6 +1,4 @@
-
--- Análise Exploratória das empresas da Fortune 1000 
-
+## Análise Exploratória das empresas da Fortune 1000 
 
 ### Sumário
 **Objetivo**: Neste projeto busquei fazer uma análise exploratória da base de dados da Fortune 1000 que é um rank que reúne as maiores empresas em receita dos Estados Unidos organizado pela revista de negócios Fortune. Foram feitas no total 16 consultas abordando desde os setores que tem o maior número de CEOs mulheres quanto as empresas de semicondutores fora do estado da California. 
