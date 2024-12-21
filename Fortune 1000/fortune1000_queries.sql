@@ -15,11 +15,11 @@ FROM fortune_analysis.fortune1000_2024;
 SELECT DISTINCT Industry
 FROM fortune_analysis.fortune1000_2024;
 
--- Consulta 3: Quais setores tem o maior número de empresas?
-SELECT Sector, COUNT(Sector) AS Total_Sector
+-- Consulta 3: Quantas industrias tem por setor? 
+SELECT Sector, Industry, COUNT(Industry) AS Total_Industry
 FROM fortune_analysis.fortune1000_2024
-GROUP BY Sector
-ORDER BY Total_Sector DESC;
+GROUP BY Sector, Industry
+ORDER BY Sector ASC, Total_Industry DESC;
 
 -- Consulta 4: Quais setores empregam mais pessoas?
 SELECT Sector, SUM(Number_of_employees) AS Total_Employees
