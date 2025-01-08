@@ -14,7 +14,7 @@
 - SQL: Para manipulação e consulta da base de dados.
 - MySQL: Como Sistema de Gerenciamento de Banco de Dados (SGBD).
 
-### 2. Análise Exploratória das Taxa Prefixada do Tesouro Nacional com Python
+### 2. Análise Exploratória das Taxas Prefixadas do Tesouro Nacional com Python
 
 **Objetivo**: Este estudo busca analisar as taxas dos títulos prefixados com duração aproximada de 2 anos (entre 700 e 760 dias), que recentemente apresentaram um aumento significativo. O objetivo é investigar o quão distantes as taxas atuais estão em relação às médias históricas, identificando uma possível oportunidade de compra.
 
