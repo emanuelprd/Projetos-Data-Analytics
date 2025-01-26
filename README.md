@@ -18,8 +18,18 @@
 
 **Objetivo**: Este estudo busca analisar as taxas dos títulos prefixados com duração aproximada de 2 anos (entre 700 e 760 dias), que recentemente apresentaram um aumento significativo. O objetivo é investigar o quão distantes as taxas atuais estão em relação às médias históricas, identificando uma possível oportunidade de compra.
 
-**Resultados**:
-Em 3 de dezembro de 2025, a taxa das LTNs zero-cupom atingiu 15,66%, acima de 80% das observações históricas (percentil 80 = 14,90%). Taxas similares foram registradas apenas em anos atípicos, como 2006, 2008 e 2025, marcados por crises econômicas. O ano de 2024 é crucial para entender a abertura da curva de juros, com uma diferença superior a 6 pontos percentuais entre as taxas mínima e máxima, refletindo a deterioração das expectativas de inflação e a perda de credibilidade fiscal. A taxa atual está próxima das máximas históricas, mas não supera os picos demonstrados nas últimas semanas. 
+**Resultados**: Em 3 de dezembro de 2025, a taxa das LTNs zero-cupom atingiu 15,66%, acima de 80% das observações históricas (percentil 80 = 14,90%). Taxas similares foram registradas apenas em anos atípicos, como 2006, 2008 e 2025, marcados por crises econômicas. O ano de 2024 é crucial para entender a abertura da curva de juros, com uma diferença superior a 6 pontos percentuais entre as taxas mínima e máxima, refletindo a deterioração das expectativas de inflação e a perda de credibilidade fiscal. A taxa atual está próxima das máximas históricas, mas não supera os picos demonstrados nas últimas semanas. 
 
 **Tecnologias**:
-- Python: Para manipulação, análise e geração dos gráficos. 
+- Python: Para manipulação, análise e geração dos gráficos.
+
+### 3. Dashboard de Dados Econômicos do BRICS
+
+**Objetivo**: Objetivo foi criar um dashboard simples contendo dados econômicos dos países do BRICS, pode-se vizualizar os dados do PIB per capita e PIB total dos 5 países que compoem o bloco (Brasil, Rússia, Índia, China e Africa do Sul) podendo selecionar os países para obter dados individualizados assim como dados gerais. 
+
+**Resultados**: Podemos ver que o país que apresenta o maior PIB é a China, entretanto não a que tem o maior PIB per capita que é a Rússia.
+
+**Tecnologias**: 
+- Power BI: Para tratamento, modelagem de dados e vizualização de dados.
+
+
