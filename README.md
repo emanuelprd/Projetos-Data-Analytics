@@ -23,9 +23,9 @@
 **Tecnologias**:
 - Python: Para manipulação, análise e geração dos gráficos.
 
-
-
-![](https://github.com/emanuelprd/Projetos-Data-Analytics/blob/main/Taxas%20Prefixadas%20(LTN)/Scatterplot%20Taxas%20Prefixadas.png?raw=true)
+<p align="center">
+  <img src="https://github.com/emanuelprd/Projetos-Data-Analytics/blob/main/Taxas%20Prefixadas%20(LTN)/Scatterplot%20Taxas%20Prefixadas.png?raw=true" alt="Scatterplot Taxas Prefixadas" width="800">
+</p>
 
 ### 3. Dashboard de Dados Econômicos do BRICS
 
@@ -40,6 +40,5 @@
   <img src="https://github.com/emanuelprd/Projetos-Data-Analytics/blob/main/Dashboard%20BRICS/Dashboard%20BRICS.png?raw=true" alt="BRICS Dashboard" width="800">
 </p>
 
-![](https://github.com/emanuelprd/Projetos-Data-Analytics/blob/main/Dashboard%20BRICS/Dashboard%20BRICS.png?raw=true)
 
 
