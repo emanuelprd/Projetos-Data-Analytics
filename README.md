@@ -16,7 +16,7 @@
 - MySQL: Como Sistema de Gerenciamento de Banco de Dados (SGBD).
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/8f43fe27-53b2-46b5-aceb-02a688e0293b" alt="Scatterplot Taxas Prefixadas" width="400">
+  <img src="https://github.com/user-attachments/assets/8f43fe27-53b2-46b5-aceb-02a688e0293b" alt="Scatterplot Taxas Prefixadas" width="300">
 </p>
 
 ### 2. Análise Exploratória das Taxas Prefixadas do Tesouro Nacional com Python
