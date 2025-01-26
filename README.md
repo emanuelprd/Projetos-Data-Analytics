@@ -24,7 +24,7 @@
 - Python: Para manipulação, análise e geração dos gráficos.
 
 <p align="center">
-  <img src="https://github.com/emanuelprd/Projetos-Data-Analytics/blob/main/Taxas%20Prefixadas%20(LTN)/Scatterplot%20Taxas%20Prefixadas.png?raw=true" alt="Scatterplot Taxas Prefixadas" width="700">
+  <img src="https://github.com/emanuelprd/Projetos-Data-Analytics/blob/main/Taxas%20Prefixadas%20(LTN)/Scatterplot%20Taxas%20Prefixadas.png?raw=true" alt="Scatterplot Taxas Prefixadas" width="650">
 </p>
 
 ### 3. Dashboard de Dados Econômicos do BRICS
