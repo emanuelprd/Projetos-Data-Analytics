@@ -1,6 +1,7 @@
 ## Sumário
 1. Análise Exploratória das empresas da Fortune 1000 com SQL
 2. Análise Exploratória das Taxa Prefixada do Tesouro Nacional com Python
+3. Dashboard de Dados Econômicos do BRICS
 
 ## Projetos
 
@@ -13,6 +14,10 @@
 **Tecnologias**: 
 - SQL: Para manipulação e consulta da base de dados.
 - MySQL: Como Sistema de Gerenciamento de Banco de Dados (SGBD).
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/8f43fe27-53b2-46b5-aceb-02a688e0293b" alt="Scatterplot Taxas Prefixadas" width="650">
+</p>
 
 ### 2. Análise Exploratória das Taxas Prefixadas do Tesouro Nacional com Python
 
