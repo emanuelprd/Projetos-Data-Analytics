@@ -32,6 +32,6 @@
 **Tecnologias**: 
 - Power BI: Para tratamento, modelagem de dados e vizualização de dados.
 
-![Descrição da Imagem]([caminho/para/imagem.png](https://github.com/emanuelprd/Projetos-Data-Analytics/blob/main/Dashboard%20BRICS/Dashboard%20BRICS.png))
+!([https://github.com/emanuelprd/Projetos-Data-Analytics/blob/main/Dashboard%20BRICS/Dashboard%20BRICS.png?raw=true))
 
 
