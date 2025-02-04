@@ -1,7 +1,7 @@
 ## Sumário
 1. Análise Exploratória das empresas da Fortune 1000 com SQL
 2. Análise Exploratória das Taxa Prefixada do Tesouro Nacional com Python
-3. Dashboard de Dados Econômicos do BRICS
+3. Dashboard de Curva de Crédito em Power BI
 
 ## Projetos
 
