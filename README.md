@@ -32,17 +32,17 @@
   <img src="https://github.com/emanuelprd/Projetos-Data-Analytics/blob/main/Taxas%20Prefixadas%20(LTN)/Scatterplot%20Taxas%20Prefixadas.png?raw=true" alt="Scatterplot Taxas Prefixadas" width="650">
 </p>
 
-### 3. Dashboard de Dados Econômicos do BRICS
+### 3. Dashboard de Curva de Crédito
 
-**Objetivo**: Objetivo foi criar um dashboard simples contendo dados econômicos dos países do BRICS, pode-se vizualizar os dados do PIB per capita e PIB total dos 5 países que compoem o bloco (Brasil, Rússia, Índia, China e Africa do Sul) podendo selecionar os países para obter dados individualizados assim como dados gerais. 
+**Objetivo**: Objetivo foi criar um dashboard simples contendo dados referentes a curva de juros do crédito privado com base em dados públicos disponíveis pela Anbima, podendo vizualizar o spread de crédito para cada vértice e segregado por rating (A, AA, AAA).
 
-**Resultados**: Podemos ver que o país que apresenta o maior PIB é a China, entretanto não a que tem o maior PIB per capita que é a Rússia.
+**Resultados**: Podemos ver o tradeoff entre duration e rating, onde prazos maiores e rating piores trazem maiores taxas entretanto com um maior risco de liquidez e de crédito respectivamente. 
 
 **Tecnologias**: 
 - Power BI: Para tratamento, modelagem de dados e vizualização de dados.
 
 <p align="center">
-  <img src="https://github.com/emanuelprd/Projetos-Data-Analytics/blob/main/Dashboard%20BRICS/Dashboard%20BRICS.png?raw=true" alt="BRICS Dashboard" width="800">
+  <img src="https://github.com/emanuelprd/Projetos-Data-Analytics/blob/main/Curva%20de%20Credito/dashboard_curva_credito.png?raw=true" width="800">
 </p>
 
 
